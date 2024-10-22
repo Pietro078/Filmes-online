@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Filmes projetc</title>
+    <link rel="stylesheet" href="{% static 'css/homee.css' %}">
+</head>
+<body>
+  <div id="esquerdo">
+    <header>Projetc</header>
+
+    <form action="{% url 'home' %}" method="POST">{% csrf_token %}
+      <button type="submit"><img class="icon" src="{% static 'image/lupa.png' %}" alt="lupa nao encontrada">
+      </button>
+        <input type="text" placeholder="Pesquisar" name="pesquisar">
+    </form>
+
+      <div id="abas">
+        <a href="">
+          <div>
+            <img src="{% static 'image/filme.png' %}">
+            <h3>Filmes</h3>
+          </div>
+        </a>
+
+        <a id="a" href="">
+          <div> 
+            <img src="{% static 'image/database.png' %}">
+            <h3>Series</h3>
+          </div>
+        </a> 
+      </div>
+  </div>
+  
+  <div id="direito">
+
+    <a href="">
+      <div id="div_filme">
+        <img id="imagem_filme" src="https://image.tmdb.org/t/p/w500/{{ poster_filme }}">
+        <h3>{{ nome_filme }}</h3>
+      </div>
+    </a>
+
+  </div>
+
+</body>
+</html>
